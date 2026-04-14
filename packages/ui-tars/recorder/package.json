@@ -1,0 +1,54 @@
+{
+  "name": "@ui-tars/recorder",
+  "version": "1.0.0",
+  "description": "Recording and script export for UI-TARS automation sessions",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bytedance/UI-TARS-desktop"
+  },
+  "bugs": {
+    "url": "https://github.com/bytedance/UI-TARS-desktop/issues"
+  },
+  "keywords": [
+    "AI",
+    "Recorder",
+    "AutoIt",
+    "UI-TARS"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "dev": "rslib build --watch",
+    "build": "rslib build",
+    "build:watch": "rslib build --watch",
+    "prepare": "pnpm run build",
+    "test": "vitest"
+  },
+  "license": "Apache-2.0",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "dependencies": {
+    "@ui-tars/sdk": "workspace:*",
+    "@ui-tars/shared": "workspace:*",
+    "sharp": "0.33.3"
+  },
+  "devDependencies": {
+    "@rslib/core": "0.10.0",
+    "@common/configs": "workspace:*",
+    "typescript": "^5.7.2",
+    "vitest": "^3.0.2"
+  }
+}
